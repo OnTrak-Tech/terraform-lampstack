@@ -17,6 +17,9 @@ tfplan.*
 .terraform/
 .terraform.lock.hcl
 
+# Large provider binaries
+.terraform/providers/
+
 # Crash Logs
 crash.log
 crash.*.log
