@@ -1,19 +1,24 @@
+output "load_balancer_url" {
+  description = "URL of the Application Load Balancer"
+  value       = "http://${aws_lb.main.dns_name}"
+}
+
+output "load_balancer_dns" {
+  description = "DNS name of the load balancer"
+  value       = aws_lb.main.dns_name
+}
+
+output "web_server_ip" {
+  description = "Public IP of the web server"
+  value       = aws_instance.web.public_ip
+}
+
+output "database_server_ip" {
+  description = "Private IP of the database server"
+  value       = aws_instance.db.private_ip
+}
+
 output "vpc_id" {
   description = "ID of the VPC"
-  value       = module.vpc.vpc_id
-}
-
-output "web_instance_public_ip" {
-  description = "Public IP of web server"
-  value       = module.web.public_ip
-}
-
-output "web_instance_public_dns" {
-  description = "Public DNS of web server"
-  value       = module.web.public_dns
-}
-
-output "application_url" {
-  description = "URL to access the LAMP application"
-  value       = "http://${module.web.public_dns}"
+  value       = aws_vpc.main.id
 }

@@ -32,3 +32,15 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
+
+variable "setup_script_url" {
+  description = "URL to the setup script in GitHub"
+  type        = string
+  default     = "https://raw.githubusercontent.com/your-username/your-repo/main/scripts/setup.sh"
+}
+
+variable "app_repo_url" {
+  description = "URL to the application repository"
+  type        = string
+  default     = "https://github.com/your-username/your-app-repo.git"
+}

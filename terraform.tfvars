@@ -1,24 +1,15 @@
 # AWS Configuration
 aws_region = "eu-west-1"
 
-# Network Configuration
-vpc_cidr             = "10.0.0.0/16"
-public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
-private_subnet_cidrs = ["10.0.10.0/24", "10.0.20.0/24"]
-availability_zones   = ["eu-west-1a", "eu-west-1b"]
-
 # EC2 Configuration
-key_name          = "LampStack"
-web_instance_type = "t3.micro"
+key_name      = "LampStack"
+instance_type = "t3.micro"
 
 # Database Configuration
 db_name     = "lampdb"
 db_username = "admin"
-db_password = "password"
+db_password = "SecureP@ssw0rd123!"
 
-# Tags
-tags = {
-  Project     = "LAMP-Stack"
-  Environment = "dev"
-  Owner       = "DevOps-Team"
-}
+# GitHub URLs
+setup_script_url = "https://raw.githubusercontent.com/your-username/terraform-lampstack/main/scripts/setup.sh"
+app_repo_url     = "https://github.com/your-username/todo-app.git"
